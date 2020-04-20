@@ -61,7 +61,7 @@ What is mean total number of steps taken per day?
 
     hist(steps_per_day$steps, main = "Total number of steps per day", xlab = "Steps per day", col = "light blue")
 
-![](PA1_template_files/figure-markdown_strict/unnamed-chunk-3-1.png)
+![](figure-markdown_strict/unnamed-chunk-3-1.png)
 
 ### 3. Calculate and report the mean and median of the total number of steps taken per day
 
@@ -81,7 +81,7 @@ What is the average daily activity pattern?
     steps_by_interval <- aggregate(steps ~ interval, ActivityData1, mean)
     plot(steps_by_interval$interval, steps_by_interval$steps, type='l', col=1, main="Average number of steps by Interval", xlab="Time Intervals", ylab="Average number of steps")
 
-![](PA1_template_files/figure-markdown_strict/unnamed-chunk-5-1.png)
+![](figure-markdown_strict/unnamed-chunk-5-1.png)
 
 ### 2. Which 5-minute interval, on average across all the days in the dataset, contains the maximum number of steps?
 
@@ -112,7 +112,7 @@ Imputing missing values
     steps_per_day2 <- aggregate(steps ~ date, NewActivityData, sum)
     hist(steps_per_day2$steps, main = "Total number of steps per day", xlab = "Steps per day", col = "blueviolet")
 
-![](PA1_template_files/figure-markdown_strict/unnamed-chunk-9-1.png)
+![](figure-markdown_strict/unnamed-chunk-9-1.png)
 
     mean(steps_per_day2$steps)
 
@@ -141,4 +141,4 @@ Are there differences in activity patterns between weekdays and weekends?
     meanstepsbyday <- aggregate(steps ~ interval + day, data=NewActivityData, FUN="mean")
     xyplot(steps ~ interval | day, data=meanstepsbyday, type="l", grid=T, layout=c(1,2), ylab="Number of steps", xlab="5-min. intervals from midnight", main="Average  5-min. activity intervals: Weekdays vs. Weekends")
 
-![](PA1_template_files/figure-markdown_strict/unnamed-chunk-11-1.png)
+![](figure-markdown_strict/unnamed-chunk-11-1.png)
